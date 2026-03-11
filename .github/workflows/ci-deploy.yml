@@ -39,10 +39,9 @@ jobs:
           pip install pytest
           pytest -v
 
-  deploy:
+  build:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v3
@@ -57,4 +56,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-     
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
