@@ -37,18 +37,14 @@ def decision(moyenne):
     else:
         return "Ajourné"
 
-#Saisie des notes
+if __name__ == "__main__":
+    #Saisie des notes
+    note1 = float(input("Entrez la première note: "))
+    note2 = float(input("Entrez la deuxième note: "))
+    note3 = float(input("Entrez la troisième note: "))
 
-note1 = float(input("Entrez la première note: "))
+    moy = calculer_moyenne (note1, note2, note3)
+    etat = decision(moy)
 
-note2 = float(input("Entrez la deuxième note: "))
-
-note3 = float(input("Entrez la troisième note: "))
-
-moy = calculer_moyenne (note1, note2, note3)
-
-etat = decision(moy)
-
-print("La moyenne est", moy)
-
-print("Résultat:", etat)
+    print("La moyenne est", moy)
+    print("Résultat:", etat)
